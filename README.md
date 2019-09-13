@@ -1,7 +1,7 @@
 # General Purpose Pipeline Class
 Pipeline class can be used to construct data pipelines by adding tasks together and defining task dependencies.   
 
-Example usage:
+### Example usage
 ```python
 from pipeline.pipeline import Pipeline
 
@@ -21,3 +21,6 @@ def third_task(x):
 
 output = pipeline.run(5)
 ```
+
+### Results
+`pipeline.run()` returns a dictionary object with the results for each task/function.
