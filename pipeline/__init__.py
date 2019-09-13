@@ -1,0 +1,1 @@
+"""General purpose Python pipeline class to construct sequence of tasks."""

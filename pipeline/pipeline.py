@@ -1,12 +1,14 @@
-from dag import DAG
+from pipeline.dag import DAG
 
 class Pipeline:
+    """Create a pipeline by chaining multiple tasks and identifying dependencies."""
     
     def __init__(self):
         self.tasks = DAG()
         
 
     def task(self, depends_on=None):
+        """Add new task to the pipeline and specify dependency task (optional)."""
         def inner(func):
             if depends_on:
                 self.tasks.add(depends_on, func)
@@ -17,6 +19,7 @@ class Pipeline:
     
 
     def run(self):
+        """Execute the pipeline and return each task results."""
         sorted_tasks = self.tasks.sort()
         completed = {}
         
