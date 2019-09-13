@@ -1,4 +1,4 @@
-# Generic Purpose Pipeline Class
+# General Purpose Pipeline Class
 General purpose Python pipeline class to chain various task together and their dependencies in order to construct function based data pipelines. 
 
 ```python
