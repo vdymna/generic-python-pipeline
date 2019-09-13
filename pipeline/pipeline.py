@@ -18,7 +18,7 @@ class Pipeline:
         return inner
     
 
-    def run(self):
+    def run(self, *args):
         """Execute the pipeline and return each task results."""
         sorted_tasks = self.tasks.sort()
         completed = {}
@@ -28,6 +28,9 @@ class Pipeline:
                 if task in nodes:
                     completed[task] = task(completed[depend_on])
             if task not in completed:
-                completed[task] = task()
+                if sorted_tasks.index(task) == 0:
+                    completed[task] = task(*args)
+                else:
+                    completed[task] = task()
         
         return completed
