@@ -1,6 +1,7 @@
 # General Purpose Pipeline Class
-General purpose Python pipeline class to chain various task together and their dependencies in order to construct function based data pipelines. 
+Pipeline class can be used to construct data pipelines by adding tasks together and defining task dependencies.   
 
+Example usage:
 ```python
 from pipeline.pipeline import Pipeline
 
